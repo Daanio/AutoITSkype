@@ -33,45 +33,46 @@ http://www.autoitscript.com/forum/topic/72869-skype-com-examples-skype4comlib/
 Dim $aRecords
 
 ;// Create a Skype4COM object:
-$oSkype = ObjCreate("Skype4COM.Skype")
-$oSkypeEvent = ObjEvent($oSkype,"Skype_")
+$oSkypeObjectCreatedToUseInAutoITScript = ObjCreate("Skype4COM.Skype")
+$oSkypeObjectCreatedToUseInAutoITScriptEvent = ObjEvent($oSkypeObjectCreatedToUseInAutoITScript,"Skype_")
 
 ;// Start the Skype client:
-If Not $oSkype.Client.IsRunning Then
-	$oSkype.Client.Start()
+If Not $oSkypeObjectCreatedToUseInAutoITScript.Client.IsRunning Then
+	$oSkypeObjectCreatedToUseInAutoITScript.Client.Start()
 EndIf
 
 ;// Verify that a user is signed in and online before continuing
 While 1
-	If $oSkype.CurrentUserStatus = $oSkype.Convert.TextToUserStatus("ONLINE") Then
+	If $oSkypeObjectCreatedToUseInAutoITScript.CurrentUserStatus = $oSkypeObjectCreatedToUseInAutoITScript.Convert.TextToUserStatus("ONLINE") Then
 		ExitLoop
 	Else
-		$oSkype.ChangeUserStatus($oSkype.Convert.TextToUserStatus("ONLINE"))
+		$oSkypeObjectCreatedToUseInAutoITScript.ChangeUserStatus($oSkypeObjectCreatedToUseInAutoITScript.Convert.TextToUserStatus("ONLINE"))
 	EndIf
 	Sleep(1000)
 WEnd
 
 ;//Retrieve the chat id with the for example Tracer, http://developer.skype.com/resources/Tracer.exe
-$oChat = $oSkype.Chat("#ralphvanroosmalen/$daanvanosch073;59f5a58e060cda91")
+$oChat = $oSkypeObjectCreatedToUseInAutoITScript.Chat("#ralphvanroosmalen/$daanvanosch07359f5a58e060cda91")
 
 ;On some special days we inform the testers about the day that is coming.
 if (@MON = 4) and (@MDAY = 29) Then
-	$Message = "Tomorrow is a public holiday in the Netherlands, http://en.wikipedia.org/wiki/Koninginnedag"
+ $Message = "Tomorrow is a public holiday in the Netherlands, http://en.wikipedia.org/wiki/Koninginnedag"
 Elseif (@MON = 1) and (@MDAY = 2) Then
-	$Message = "Happy New Year to you all!"
+  $Message = "Happy New Year to you all!"
 Elseif (@MON = 12) and (@MDAY = 24) Then
-	$Message = "Enjoy X-Mas!"
+ $Message = "Enjoy X-Mas!"
 Elseif (@MON = 8) and (@MDAY = 14) Then
-	$Message = "Tomorrow is a public holiday in India, Independence Day, http://en.wikipedia.org/wiki/Independence_Day_(India)"
+$Message = "Tomorrow is a public holiday in India, Independence Day, http://en.wikipedia.org/wiki/Independence_Day_(India)"
 Elseif (@MON = 1) and (@MDAY = 25) Then
-	$Message = "Tomorrow is a public holiday in India, Republic Day, http://en.wikipedia.org/wiki/Republic_Day_(India)"
-ElseIf (@MON = 10) and (@MDAY = 1) Then
-	$Message = "Tomorrow is a public holiday in India, Mahatma Gandhi's Birthday, http://en.wikipedia.org/wiki/Gandhi_Jayanti"
+                     $Message = "Tomorrow is a public holiday in India, Republic Day, http://en.wikipedia.org/wiki/Republic_Day_(India)"
+ElseIf (@MON = 10) and (@MDAY = 1) Then 
+   $Message = "Tomorrow is a public holiday in India, Mahatma Gandhi's Birthday, http://en.wikipedia.org/wiki/Gandhi_Jayanti"
 Else
 	If Not _FileReadToArray("tipofthedayfortesters.txt",$aRecords) Then
 		MsgBox(4096,"Error", " Error reading log to Array error:" & @error)
 		Exit
-	EndIf
+	 EndIf
+	 $MDday = Random($aRecords[0] + 1)
 	$TipOfTheDayNr = mod(@MDAY,$aRecords[0])
 	if $TipOfTheDayNr = 0 Then
 		$TipOfTheDayNr = $aRecords[0]
