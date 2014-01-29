@@ -52,7 +52,7 @@ While 1
 WEnd
 
 ;//Retrieve the chat id with the for example Tracer, http://developer.skype.com/resources/Tracer.exe
-$oChat = $oSkypeObjectCreatedToUseInAutoITScript.Chat("#ralphvanroosmalen/$daanvanosch07359f5a58e060cda91")
+$oChat = $oSkypeObjectCreatedToUseInAutoITScript.Chat("#ralphvanroosmalen/1450d4bf63dfbd86")
 
 ;On some special days we inform the testers about the day that is coming.
 if (@MON = 4) and (@MDAY = 29) Then
