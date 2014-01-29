@@ -72,7 +72,7 @@ While 1
 	Else
 		$oSkype.ChangeUserStatus($oSkype.Convert.TextToUserStatus("ONLINE"))
 	EndIf
-	Sleep(1000)
+	Sleep(1500)
 WEnd
 
 ;// Query properties of all recent chats:
