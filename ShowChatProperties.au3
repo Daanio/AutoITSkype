@@ -96,7 +96,7 @@ Func displayChatProperties($aChat)
 	$output = "Label: " & $aChat.FriendlyName
 	$output = $output & @CR & "Created at: " & $aChat.Timestamp
 	$output = $output & @CR & "Last activity at: " & $aChat.ActivityTimestamp
-	$output = $output & @CR & "Id (USE THIS ID TO CONNECT TO A SPECIFIC CHAT): " & $aChat.Name
+	$output = $output & @CR & "Id (Use ID to connect to a specific chat): " & $aChat.Name
 	$output = $output & @CR & "Blob: " & $aChat.Blob
 	$output = $output & @CR & "Description: " & $aChat.Description
 	$output = $output & @CR & "Guidelines: " & $aChat.Guidelines
