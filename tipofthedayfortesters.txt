@@ -8,3 +8,5 @@ Quality is the value of a product to someone who matters
 If you need to refactor an automated test because it is often failing, plan some hours for this in the next sprint in the general section.
 If you find one bug in a certain feature, there are more bugs. Bugs never come alone!
 Send your tip of the day to me.
+Writing good, clear & descriptive bug report.
+Test environments should own by Testing team
