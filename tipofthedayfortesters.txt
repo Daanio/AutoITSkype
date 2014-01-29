@@ -1,0 +1,10 @@
+Discuss test approach also for complex high risk bug fixes.
+Use customer data during exploratory testing.
+When you start with an ET session, first review the checklist to generate some ideas.
+As tester allways discuss the integration tests or what is covered by integration tests with the developers, we should not test anything twice
+Test suites should be independent; Setup and cleanup should be handled properly and a TestSuite should not effect other testsuites.
+When you send an invitation for a test script review, also mention which procedures and dependencies are changed or created. This make it more efficient to prepare a test review meeting.
+Quality is the value of a product to someone who matters
+If you need to refactor an automated test because it is often failing, plan some hours for this in the next sprint in the general section.
+If you find one bug in a certain feature, there are more bugs. Bugs never come alone!
+Send your tip of the day to me.
