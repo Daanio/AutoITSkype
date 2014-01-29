@@ -48,7 +48,7 @@ While 1
 	Else
 		$oSkypeObjectCreatedToUseInAutoITScript.ChangeUserStatus($oSkypeObjectCreatedToUseInAutoITScript.Convert.TextToUserStatus("ONLINE"))
 	EndIf
-	Sleep(1000)
+	Sleep(2000)
 WEnd
 
 ;//Retrieve the chat id with the for example Tracer, http://developer.skype.com/resources/Tracer.exe
